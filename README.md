@@ -95,7 +95,7 @@ $ scp C:/Users/USERFOLDER/.ssh/remoteKeytoremoteNameIp.pub remoteOpiUser@remoteO
 $ ssh remoteOpiUser@remoteOpiIp "touch /home/remoteOpiUser/.ssh/authorized_keys && chmod 600 /home/remoteOpiUser/.ssh/authorized_keys"
    ```
 
-**11.** Create new docker context for using docker from PC with windows 10/11:
+**11.** Create new docker context for using docker from PC windows 10/11:
 
    ```sh
 $ docker context ls
@@ -104,9 +104,9 @@ $ docker context use someRemoteName
 $ docker context ls
    ```
 
-**11.** Create folder for deploy by docker-compose
+**12.** Create folder for deploy by docker-compose
 
-**12.** Create file with environment vars
+**13.** Create file with environment vars
 
    > .env
 
@@ -121,7 +121,7 @@ WEBHOOK=0
 HOST=null
    ```
 
-**13.** Create file docker-compose.yml
+**14.** Create file docker-compose.yml
 
    > docker-compose.yml
 
@@ -145,7 +145,7 @@ services:
       WEBHOOK: ${WEBHOOK}
    ```
 
-**14.** Run command in this folder (**NOT NEED GIT CLONE**):
+**15.** Run command in this folder (**NOT NEED GIT CLONE**):
 
    ```sh
 $ docker-compose up -d --build    
