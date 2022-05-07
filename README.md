@@ -95,6 +95,15 @@ $ scp C:/Users/USERFOLDER/.ssh/remoteKeytoremoteNameIp.pub remoteOpiUser@remoteO
 $ ssh remoteOpiUser@remoteOpiIp "touch /home/remoteOpiUser/.ssh/authorized_keys && chmod 600 /home/remoteOpiUser/.ssh/authorized_keys"
    ```
 
+**11.** Create new docker context for using docker from PC with windows 10/11:
+
+   ```sh
+$ docker context ls
+$ docker context create someRemoteName --docker "host=ssh://remoteOpiUser@remoteOpiIp"
+$ docker context use someRemoteName
+$ docker context ls
+   ```
+
 **11.** Create folder for deploy by docker-compose
 
 **12.** Create file with environment vars
