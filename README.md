@@ -1,7 +1,10 @@
 # Telegram video & music easy self saving (*TV & MESS*)
 
-Sometimes you want test some content as binary files (load from ***youtube*** or ***music.youtube*** mosquito noise, for example). And you too pity spend time for find some site, filled adv. Plus you want ***App*** in your control and on your side.
-If you need get ***mp4*** or ***mp3*** file by ***Telegram Bot*** use this repo.
+App consist of functionality Telegram Bot and functionality for download mp4, convert to mp3 using ffmpeg, crop JPG and then add to ID3(MP3). Current tested variants for deploy you can saw below.
+
+### Notes: 
+> Sometimes you want test some content as binary files (load from ***youtube*** or ***music.youtube*** mosquito noise, for example). And you too pity spend time for find some site, filled adv. Plus you want ***App*** in your control and on your side.
+If you need get ***mp4*** or ***mp3*** file for testing by ***Telegram Bot*** use this repo.
 
 ## Choose your variant (if exist):
 
