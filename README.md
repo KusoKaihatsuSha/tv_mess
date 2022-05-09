@@ -131,21 +131,21 @@ HOST=null
    ```dockerfile
 version: "3.8"
 services:
-   git:
-      container_name: tv_mess
-      build: ${GIT}
-   ports:
-      - ${PORT}:${PORT}
-   restart: always
-   expose:
-      - ${PORT}
-   environment:
-      GAPI: ${GAPI}
-      TAPI: ${TAPI}
-      DEBUG: ${DEBUG}
-      COUNTTASK: ${COUNTTASK}
-      HOST: ${HOST}
-      WEBHOOK: ${WEBHOOK}
+      git:
+         container_name: tv_mess
+         build: ${GIT}
+      ports:
+         - ${PORT}:${PORT}
+      restart: always
+      expose:
+         - ${PORT}
+      environment:
+         GAPI: ${GAPI}
+         TAPI: ${TAPI}
+         DEBUG: ${DEBUG}
+         COUNTTASK: ${COUNTTASK}
+         HOST: ${HOST}
+         WEBHOOK: ${WEBHOOK}
    ```
 
 **15.** Run command in this folder (**NOT NEED GIT CLONE**):
