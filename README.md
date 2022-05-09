@@ -113,7 +113,7 @@ $ docker context ls
 
    > .env
 
-   ```ini
+   ```dockerfile
 GAPI=keyGoogleApiv3
 TAPI=telegramBotApi
 PORT=8910
@@ -128,7 +128,7 @@ HOST=null
 
    > docker-compose.yml
 
-   ```ini
+   ```dockerfile
 version: "3.8"
 services:
    git:
