@@ -8,7 +8,7 @@ If you need get ***mp4*** or ***mp3*** file for testing by ***Telegram Bot*** us
 
 ## Choose your variant (if exist):
 
-### 001 (Orange Pi 3 LTS):
+### 1 (Orange Pi 3 LTS):
 
 **1.** You buy cheapest single-board PC and PC with Windows 10/11(for example):
 
@@ -131,15 +131,15 @@ HOST=null
    ```ini
 version: "3.8"
 services:
-  git:
-    container_name: tv_mess
-    build: ${GIT}
-    ports:
+   git:
+      container_name: tv_mess
+      build: ${GIT}
+   ports:
       - ${PORT}:${PORT}
-    restart: always
-    expose:
+   restart: always
+   expose:
       - ${PORT}
-    environment:
+   environment:
       GAPI: ${GAPI}
       TAPI: ${TAPI}
       DEBUG: ${DEBUG}
@@ -161,7 +161,7 @@ $ docker-compose up -d --build
 $ docker-compose down
    ```
 
-### 002 (Heroku):
+### 2 (Heroku):
 
 **1.** Install Heroku and login in Heroku CLI
 
