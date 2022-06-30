@@ -1,4 +1,4 @@
-module YTM_easy_saver
+module github.com/KusoKaihatsuSha/tv_mess
 
 go 1.18
 
