@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![godoc](https://godoc.org/github.com/KusoKaihatsuSha/tv_mess?status.svg)](https://godoc.org/github.com/KusoKaihatsuSha/tv_mess) [![Go Report Card](https://goreportcard.com/badge/github.com/KusoKaihatsuSha/tv_mess)](https://goreportcard.com/report/github.com/KusoKaihatsuSha/tv_mess)
+
 # Telegram video & music easy self saving (*TV & MESS*)
 
 App consist of functionality Telegram Bot and functionality for download mp4, convert to mp3 using ffmpeg, crop JPG and then add to ID3(MP3). Current tested variants for deploy you can saw below.
