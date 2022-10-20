@@ -40,8 +40,8 @@ func hash_files_tester(T *Tasker, task Thing, message *Message) {
 	}
 	f1 := hashSum(filepath.Join(idd, testname+mp4), "aafc22c54c796cbaf580a72111ec4f1b53594860")
 	f2 := hashSum(filepath.Join(idd, testid+".json"), "e2f4acae9cb9817b149b483ee733b67a5bbed0e6")
-	f3 := hashSum(filepath.Join(idd, testname+jpg), "96b270db3585ec9efe9cde46361ee5e442e18d4c")
-	f4 := hashSum(filepath.Join(idd, testname+mp3), "f10e69afdfb3204b60d5b64f1a3a5bce12442a51")
+	//f3 := hashSum(filepath.Join(idd, testname+jpg), "512c99e2b55eeec16537ead181918d5f83bb774d")//in ram
+	f4 := hashSum(filepath.Join(idd, testname+mp3), "a6f9546be69047e1b0eef85cbe9f0757af18c1cf")
 	filepath.Join(idd, testname+mp4)
 	filepath.Join(idd, testid+".json")
 	filepath.Join(idd, testname+jpg)
@@ -56,11 +56,11 @@ func hash_files_tester(T *Tasker, task Thing, message *Message) {
 	} else {
 		fmt.Println("success", filepath.Join(idd, testid+".json"))
 	}
-	if f3 != nil {
-		t.Error(f3)
-	} else {
-		fmt.Println("success", filepath.Join(idd, testname+jpg))
-	}
+	// if f3 != nil {
+	// 	t.Error(f3)
+	// } else {
+	// 	fmt.Println("success", filepath.Join(idd, testname+jpg))
+	// }
 	if f4 != nil {
 		t.Error(f4)
 	} else {
@@ -76,7 +76,6 @@ func downloading_tasker_tester(T *Tasker, task Thing, message *Message) {
 	fmt.Println(t.Name())
 	fmt.Println(">>>", t.Name(), v1)
 	idd := testid + sprintf("__%d", v1)
-	fmt.Println(idd)
 	debug = true
 	playlistQ :=
 		resource +

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"testing"
 )
 
@@ -18,5 +19,5 @@ func Test_tasker_checker_fast(t *testing.T) {
 	mes := &Message{}
 	Tr.Add([]any{9999, t}, hash_files_tester, mes)
 	Tr.Wg.Wait()
-	//os.RemoveAll(testid + sprintf("__%d", 9999))
+	os.RemoveAll(testid + sprintf("__%d", 9999))
 }
