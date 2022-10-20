@@ -13,6 +13,7 @@ import (
 	"net"
 	"net/http"
 	"os"
+	"path/filepath"
 	"regexp"
 	"sort"
 	"strconv"
@@ -303,7 +304,7 @@ func (o *Query) GetVideoWrapperTask(T *Tasker, task Thing, message *Message) {
 		if err != nil {
 			next.toLog(err.Error(), true)
 		}
-		next.URLSaved = next.UUID + `\` + next.Artist + "__" + next.Song + "__" + next.ID
+		next.URLSaved = filepath.Join(next.UUID, next.Artist+"__"+next.Song+"__"+next.ID)
 		if vv.Snippet.Thumbnails.Maxres.URL != "" {
 			next.PicturePath = vv.Snippet.Thumbnails.Maxres.URL
 		} else {
