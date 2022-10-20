@@ -12,7 +12,7 @@ import (
 )
 
 var testid = "tO-vtgZxPl0"
-var testgapi = "AIzaXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+var testgapi = os.Getenv("GAPI")
 var testname = `Audio Library — Music for content creators__Coral – LiQWYD (No Copyright Music)__tO-vtgZxPl0`
 
 func hash_files_tester(T *Tasker, task Thing, message *Message) {
