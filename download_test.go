@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"testing"
 	"time"
 )
@@ -28,6 +27,6 @@ func Test_tasker_checker(t *testing.T) {
 	}
 	Tr.Wg.Wait()
 	for i := 1; i <= 2; i++ {
-		os.RemoveAll(testid + sprintf("__%d", i))
+		//os.RemoveAll(testid + sprintf("__%d", i))
 	}
 }
