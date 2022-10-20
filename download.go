@@ -230,7 +230,7 @@ func (o *Query) GetInformationVideo(T *Tasker, id string, message *Message) {
 	var vJson ItemInformation
 	json.Unmarshal(list, &vJson)
 	go T.Add(&vJson, o.GetVideoWrapperTask, message)
-	err := os.MkdirAll(message.UUID, 0644)
+	err := os.MkdirAll(message.UUID, 0775)
 	if err != nil {
 		toLog(err.Error())
 	}
