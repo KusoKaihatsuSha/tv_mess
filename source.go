@@ -279,7 +279,7 @@ func (obj *Action) UpdateMsg(MainTasker *Tasker, cmds *Commands, err error) {
 	}
 }
 
-//-----
+// -----
 func main() {
 	// For deploying need set envs(file .env for example):
 	// os.Setenv("GAPI", "xxxXXXxxx")
@@ -328,7 +328,7 @@ func main() {
 	if err != nil {
 		toLog(err)
 	}
-	obj.Db.Open(path + `/` + databasename)
+	obj.Db.Open(filepath.Join(path, databasename))
 	defer obj.Db.Close()
 	markCurrent := func(user *botUser, key_ string, list map[string]string) map[string]string {
 		newlist := make(map[string]string)

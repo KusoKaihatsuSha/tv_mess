@@ -38,29 +38,33 @@ func hash_files_tester(T *Tasker, task Thing, message *Message) {
 			return errors.New("test error sum sha1 file " + path + " (" + hash_ + " not " + h + ")")
 		}
 	}
-	f1 := hashSum(idd+"/"+testname+mp4, "aafc22c54c796cbaf580a72111ec4f1b53594860")
-	f2 := hashSum(idd+"/"+testid+".json", "e2f4acae9cb9817b149b483ee733b67a5bbed0e6")
-	f3 := hashSum(idd+"/"+testname+jpg, "96b270db3585ec9efe9cde46361ee5e442e18d4c")
-	f4 := hashSum(idd+"/"+testname+mp3, "f10e69afdfb3204b60d5b64f1a3a5bce12442a51")
+	f1 := hashSum(filepath.Join(idd, testname+mp4), "aafc22c54c796cbaf580a72111ec4f1b53594860")
+	f2 := hashSum(filepath.Join(idd, testid+".json"), "e2f4acae9cb9817b149b483ee733b67a5bbed0e6")
+	f3 := hashSum(filepath.Join(idd, testname+jpg), "96b270db3585ec9efe9cde46361ee5e442e18d4c")
+	f4 := hashSum(filepath.Join(idd, testname+mp3), "f10e69afdfb3204b60d5b64f1a3a5bce12442a51")
+	filepath.Join(idd, testname+mp4)
+	filepath.Join(idd, testid+".json")
+	filepath.Join(idd, testname+jpg)
+	filepath.Join(idd, testname+mp3)
 	if f1 != nil {
 		t.Error(f1)
 	} else {
-		fmt.Println("success", idd+"/"+testname+mp4)
+		fmt.Println("success", filepath.Join(idd, testname+mp4))
 	}
 	if f2 != nil {
 		t.Error(f2)
 	} else {
-		fmt.Println("success", idd+"/"+testid+".json")
+		fmt.Println("success", filepath.Join(idd, testid+".json"))
 	}
 	if f3 != nil {
 		t.Error(f3)
 	} else {
-		fmt.Println("success", idd+"/"+testname+jpg)
+		fmt.Println("success", filepath.Join(idd, testname+jpg))
 	}
 	if f4 != nil {
 		t.Error(f4)
 	} else {
-		fmt.Println("success", idd+"/"+testname+mp3)
+		fmt.Println("success", filepath.Join(idd, testname+mp3))
 	}
 	fmt.Println(">>>", t.Name(), " - done", v1)
 }
@@ -94,12 +98,12 @@ func downloading_tasker_tester(T *Tasker, task Thing, message *Message) {
 	if err != nil {
 		t.Error(err.Error())
 	}
-	obj.Db.Open(path + `/` + idd)
+	obj.Db.Open(filepath.Join(path, idd))
 	defer obj.Db.Close()
 	tmp := new(Query)
 	tmp.Tasker = T
 	message.UUID = idd
-	message.AddCtx(T, "log_path", idd+"/"+testid+".json")
+	message.AddCtx(T, "log_path", filepath.Join(idd, testid+".json"))
 	usr := new(botUser)
 	usr.Name = testid
 	usr.New(obj.Db, 0)
