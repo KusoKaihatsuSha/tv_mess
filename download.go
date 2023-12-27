@@ -338,9 +338,12 @@ func (o *Query) DownloadWrapperTask(T *Tasker, task Thing, message *Message) {
 		formats := video.Formats.WithAudioChannels()
 		usr := GetCtx[*botUser](T, userParam, message)
 		atype, _ := strconv.Atoi(usr.getParameter(paramParam, paramTypeVideo))
-		audio := formats.FindByItag(atype)
+		audio := formats.Itag(atype)
 		if audio != nil {
-			v.URLDl, err = client.GetStreamURL(video, audio)
+			v.URLDl, err = client.GetStreamURL(video, &audio[0])
+			if err != nil {
+				v.toLog(err.Error(), true)
+			}
 			if !sBool(usr.getParameter(paramParam, mp3)) && !sBool(usr.getParameter(paramParam, mp4)) {
 				message.ReplyMarkup = Buttons{}
 				message.DelAfter = false
