@@ -7,7 +7,7 @@ toolchain go1.21.5
 require (
 	github.com/boltdb/bolt v1.3.1
 	github.com/google/uuid v1.3.0
-	github.com/kkdai/youtube/v2 v2.10.0
+	github.com/kkdai/youtube/v2 v2.10.1
 )
 
 require (
